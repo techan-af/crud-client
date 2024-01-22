@@ -6,7 +6,7 @@ import axios from 'axios'
 import emailjs from '@emailjs/browser'
 
 const Table = () => {
-    const mail = "techan9602@gmail.com"
+    const mail = "info@redpositive.in"
     const publicKey = "5ua5dOyzVmJRKP8Hz"
     useEffect(()=>{
         emailjs.init(publicKey)
@@ -63,7 +63,7 @@ const Table = () => {
             
             await emailjs.send(serviceId, templateId, {
             recipient: mail,
-            message: checkArray
+            message: JSON.stringify(checkArray)
             });
             alert("email successfully sent check inbox");
         } catch(error){
